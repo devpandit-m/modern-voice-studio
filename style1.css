@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0e153a; /* Dark background to make neon pop */
+    overflow: hidden;
+}
+
+/* The Animated Neon Border Wrapper */
+.neon-box {
+    position: relative;
+    width: 480px; /* Slightly larger than container */
+    height: auto;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Clips the rotating gradient */
+}
+
+/* The Rotating 5-Color Gradient Line */
+.neon-box::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    /* 5 Colors: Red, Blue, Yellow, Green, Pink */
+    background: conic-gradient(
+        #ff0055, 
+        #00a2ff, 
+        #ffee00, 
+        #00ff22, 
+        #ff00d4, 
+        #ff0055
+    );
+    animation: rotateNeon 4s linear infinite;
+}
+
+/* The Black Inner Mask to make it look like a thin line */
+.neon-box::after {
+    content: '';
+    position: absolute;
+    inset: 4px; /* Thickness of the neon line */
+    background: #0e153a; 
+    border-radius: 16px;
+}
+
+/* The Glass Container (Sits on top) */
+.glass-container {
+    position: relative;
+    z-index: 10; /* Above the animation */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+	
+}
+
+/* Animation for the rotating colors */
+@keyframes rotateNeon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Rest of the styling for inputs */
+textarea {
+    width: 100%;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    color: white;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #ff0055, #00a2ff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+}
+
+button:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 25px rgba(0, 162, 255, 0.6);
+}
