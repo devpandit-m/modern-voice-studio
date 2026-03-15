@@ -1,10 +1,7 @@
-# 🎙️ Modern AI Voice Studio
+# 🎙️ Modern  Voice Studio
 
 A sleek, high-performance **Text-to-Speech (TTS)** web application that converts text into natural-sounding audio. This project focuses on a premium user experience using modern CSS techniques and the Web Speech API.
 
-![License](https://img.shields.io)
-![Javascript](https://img.shields.io)
-![CSS](https://img.shields.io)
 
 ## ✨ Features
 
