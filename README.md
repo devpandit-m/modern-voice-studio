@@ -29,4 +29,4 @@ A sleek, high-performance **Text-to-Speech (TTS)** web application that converts
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com
+   git clone [https://github.com](https://github.com/devpandit-m/modern-voice-studio.git)
